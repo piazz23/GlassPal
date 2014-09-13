@@ -2,6 +2,7 @@ package org.hackmed.glasspal;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,12 +12,15 @@ import com.empatica.empalink.delegate.EmpaStatusDelegate;
 
 public class MyActivity extends Activity {
 
+    private static final String TAG = "MyActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-        EmpaDelegate delegate = new EmpaDelegate(getApplicationContext());
+        EmpaDelegate delegate = new EmpaDelegate(this, getApplicationContext());
         delegate.connect();
+        Log.d(TAG, "asddaasdadsasd");
     }
 
 
